@@ -2,9 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const { error, warning, success } = require('../chalk/index');
 
-const createComponent = (dir, comp, fileTemplate, compDirPath) => {
+const createComponent = (dir, comp, fileTemplate, compDirPath, compType = 'Component') => {
   if (!comp) {
-    return console.log(warning('Please provide component name.'));
+    return console.log(warning(`Please provide ${compType} name.`));
   }
 
   const compSubDirPath = dir ? path.resolve(compDirPath, dir) : compDirPath;
@@ -17,11 +17,11 @@ const createComponent = (dir, comp, fileTemplate, compDirPath) => {
   const componentPath = path.resolve(compSubDirPath, filename);
 
   if (fs.existsSync(componentPath)) {
-    return console.log(error('Component with such name already exists!'));
+    return console.log(error(`${compType} with such name already exists!`));
   }
 
   fs.writeFileSync(componentPath, fileTemplate);
-  console.log(success('Component has been successfully created!'));
+  console.log(success(`${compType} Component has been successfully created!`));
 }
 
 module.exports = createComponent;

@@ -3,10 +3,10 @@ const yargs = require('yargs/yargs');
 const { hideBin } = require('yargs/helpers');
 const commands = require('./commands');
 const { error, info } = require('./chalk');
-const config = require('./config');
-const initialConfig = require('./initialConfig');
+const configuration = require('./configuration');
+const initialConfiguration = require('./initialConfiguration');
 const showCommands = require('./commands/show-commands');
-const configure = require('./commands/configure');
+const config = require('./commands/config');
 const makeFuncComp = require('./commands/make-func-comp');
 const makeClassComp = require('./commands/make-class-comp');
 const makeFuncCompWithRedux = require('./commands/make-func-comp-with-redux');
@@ -14,6 +14,7 @@ const makeClassCompWithRedux = require('./commands/make-func-comp-with-redux');
 const makeHOCComp = require('./commands/make-hoc-comp');
 const makeHOCCompWithRedux = require('./commands/make-hoc-comp-with-redux');
 const makeSCSSFile = require('./commands/make-scss-file');
+const makeContext = require('./commands/make-context');
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -27,16 +28,17 @@ const argv = yargs(hideBin(process.argv)).argv;
     return;
   }
 
-  const fullConfig = {...initialConfig, ...config};
+  const fullConfig = {...initialConfiguration, ...configuration};
   const compDirPath = path.resolve(__dirname, fullConfig.compDirPath);
   const stylesDirPath = path.resolve(__dirname, fullConfig.stylesDirPath);
+  const contextDirPath = path.resolve(__dirname, fullConfig.contextDirPath);
 
   switch (command) {
     case 'show-commands':
       showCommands();
       break;
-    case 'configure':
-      configure(argv);
+    case 'config':
+      config(argv);
       break;
     case 'make-func-comp':
       makeFuncComp(compDirPath, argv);
@@ -58,6 +60,9 @@ const argv = yargs(hideBin(process.argv)).argv;
       break;
     case 'make-scss-file':
       makeSCSSFile(stylesDirPath, argv);
+      break;
+    case 'make-context':
+      makeContext(contextDirPath, argv);
       break;
   }
 })();

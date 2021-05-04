@@ -1,5 +1,5 @@
 module.exports = [
-  'configure',
+  'config',
   'reset-config',
   'show-commands',
   'make-class-comp',
