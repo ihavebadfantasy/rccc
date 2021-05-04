@@ -21,7 +21,7 @@ const createComponent = (dir, comp, fileTemplate, compDirPath, compType = 'Compo
   }
 
   fs.writeFileSync(componentPath, fileTemplate);
-  console.log(success(`${compType} Component has been successfully created!`));
+  console.log(success(`${compType} has been successfully created!`));
 }
 
 module.exports = createComponent;

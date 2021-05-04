@@ -11,5 +11,7 @@ module.exports = [
   'make-scss-file',
   'make-redux-middleware',
   'make-redux-reducer',
+  'make-redux-store',
   'make-context',
+  'make-custom-hook',
 ];

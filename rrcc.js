@@ -15,6 +15,8 @@ const makeHOCComp = require('./commands/make-hoc-comp');
 const makeHOCCompWithRedux = require('./commands/make-hoc-comp-with-redux');
 const makeSCSSFile = require('./commands/make-scss-file');
 const makeContext = require('./commands/make-context');
+const makeReduxReducer = require('./commands/make-redux-reducer');
+const makeReduxMiddleware = require('./commands/make-redux-middleware');
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -32,6 +34,8 @@ const argv = yargs(hideBin(process.argv)).argv;
   const compDirPath = path.resolve(__dirname, fullConfig.compDirPath);
   const stylesDirPath = path.resolve(__dirname, fullConfig.stylesDirPath);
   const contextDirPath = path.resolve(__dirname, fullConfig.contextDirPath);
+  const reduxDirPath = path.resolve(__dirname, fullConfig.reduxDirPath);
+  const middlewaresDirPath = path.resolve(__dirname, fullConfig.middlewaresDirPath);
 
   switch (command) {
     case 'show-commands':
@@ -63,6 +67,12 @@ const argv = yargs(hideBin(process.argv)).argv;
       break;
     case 'make-context':
       makeContext(contextDirPath, argv);
+      break;
+    case 'make-redux-reducer':
+      makeReduxReducer(reduxDirPath, argv);
+      break;
+    case 'make-redux-middleware':
+      makeReduxMiddleware(middlewaresDirPath, argv);
       break;
   }
 })();
