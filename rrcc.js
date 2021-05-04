@@ -11,6 +11,8 @@ const makeFuncComp = require('./commands/make-func-comp');
 const makeClassComp = require('./commands/make-class-comp');
 const makeFuncCompWithRedux = require('./commands/make-func-comp-with-redux');
 const makeClassCompWithRedux = require('./commands/make-func-comp-with-redux');
+const makeHOCComp = require('./commands/make-hoc-comp');
+const makeHOCCompWithRedux = require('./commands/make-hoc-comp-with-redux');
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -45,6 +47,12 @@ const argv = yargs(hideBin(process.argv)).argv;
       break;
     case 'make-class-comp-with-redux':
       makeClassCompWithRedux(compDirPath, argv);
+      break;
+    case 'make-hoc-comp':
+      makeHOCComp(compDirPath, argv);
+      break;
+    case 'make-hoc-comp-with-redux':
+      makeHOCCompWithRedux(compDirPath, argv);
       break;
   }
 })();

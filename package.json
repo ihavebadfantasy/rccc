@@ -1,7 +1,25 @@
 {
   "name": "react-redux-components-cli",
   "version": "0.1.0",
+  "description": "",
   "private": false,
+  "author": "ihavebadfantasy",
+  "license": "MIT",
+  "homepage": "https://github.com/ihavebadfantasy/rrcc",
+  "keywords": [
+    "react",
+    "hooks",
+    "componentDidUpdate",
+    "side-effects",
+    "useEffect"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ihavebadfantasy/rrcc"
+  },
+  "bugs": {
+    "url": "https://github.com/ihavebadfantasy/rrcc/issues"
+  },
   "dependencies": {
     "chalk": "^4.1.0",
     "node-sass": "^5.0.0",
