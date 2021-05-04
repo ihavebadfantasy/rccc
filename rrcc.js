@@ -13,6 +13,7 @@ const makeFuncCompWithRedux = require('./commands/make-func-comp-with-redux');
 const makeClassCompWithRedux = require('./commands/make-func-comp-with-redux');
 const makeHOCComp = require('./commands/make-hoc-comp');
 const makeHOCCompWithRedux = require('./commands/make-hoc-comp-with-redux');
+const makeSCSSFile = require('./commands/make-scss-file');
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -28,6 +29,7 @@ const argv = yargs(hideBin(process.argv)).argv;
 
   const fullConfig = {...initialConfig, ...config};
   const compDirPath = path.resolve(__dirname, fullConfig.compDirPath);
+  const stylesDirPath = path.resolve(__dirname, fullConfig.stylesDirPath);
 
   switch (command) {
     case 'show-commands':
@@ -53,6 +55,9 @@ const argv = yargs(hideBin(process.argv)).argv;
       break;
     case 'make-hoc-comp-with-redux':
       makeHOCCompWithRedux(compDirPath, argv);
+      break;
+    case 'make-scss-file':
+      makeSCSSFile(stylesDirPath, argv);
       break;
   }
 })();
