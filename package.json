@@ -1,0 +1,20 @@
+{
+  "name": "react-redux-components-cli",
+  "version": "0.1.0",
+  "private": false,
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "node-sass": "^5.0.0",
+    "yargs": "^16.2.0",
+    "yarn": "^1.22.10"
+  },
+  "scripts": {
+
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  }
+}
