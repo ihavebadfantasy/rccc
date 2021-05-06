@@ -17,6 +17,7 @@ const makeSCSSFile = require('./commands/make-scss-file');
 const makeContext = require('./commands/make-context');
 const makeReduxReducer = require('./commands/make-redux-reducer');
 const makeReduxMiddleware = require('./commands/make-redux-middleware');
+const resetConfig = require('./commands/reset-config');
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -73,6 +74,9 @@ const argv = yargs(hideBin(process.argv)).argv;
       break;
     case 'make-redux-middleware':
       makeReduxMiddleware(middlewaresDirPath, argv);
+      break;
+    case 'reset-config':
+      resetConfig();
       break;
   }
 })();
