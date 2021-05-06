@@ -1,7 +1,7 @@
 {
   "name": "react-redux-components-cli",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.1.5",
+  "description": "Cli to create react and redux component with",
   "private": false,
   "author": "ihavebadfantasy",
   "license": "MIT",
@@ -9,9 +9,9 @@
   "keywords": [
     "react",
     "hooks",
-    "componentDidUpdate",
-    "side-effects",
-    "useEffect"
+    "components",
+    "cli",
+    "redux"
   ],
   "repository": {
     "type": "git",
@@ -22,17 +22,11 @@
   },
   "dependencies": {
     "chalk": "^4.1.0",
-    "node-sass": "^5.0.0",
     "yargs": "^16.2.0",
     "yarn": "^1.22.10"
   },
-  "scripts": {
-    "rrcc": "node rrcc.js"
+  "bin": {
+    "rrcc": "./bin/index.js"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  }
+  "main": "bin/index.js"
 }
