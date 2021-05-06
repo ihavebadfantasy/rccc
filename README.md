@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+### Installation
+```
+$ npm install use-update
+```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+or
 
-## Available Scripts
+```
+$ yarn add use-update
+```
 
-In the project directory, you can run:
 
-### `yarn start`
+### Default config values
+|Param|Value|
+|---|---|
+|compDirPath|src/components|
+|hocCompDirPath|src/components/HOC|
+|stylesDirPath|src/styles|
+|reduxDirPath|src/store|
+|middlewaresDirPath|src/middlewares|
+|contextDirPath|src/contexts|
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Commands
+#### show commands
+```
+npx rrcc show-commands
+```
+#### set custom config
+You can change any amount of params value from default config 
+```
+npx rrcc config -- --compDirPath src/comps --hocCompDirPath src/comps/hocs --stylesDirPath src/comps 
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### reset config to initial values
+```
+npx rrcc reset-config
+```
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+All 'make' commands accept --dir and --comp arguments. --comp argument is required and is used as a component name and component filename.
+--dir argument creates a directory with a given name if not exists, can be omitted.
+#### create class component
+```
+npx rrcc make-class-comp -- --dir Test --comp TestComp
+```
+#### create class component with redux connected
+```
+npx rrcc make-class-comp-with-redux -- --dir Test --comp TestComp
+```
+#### create context component
+```
+npx rrcc make-context --dir Test --comp TestComp
+```
+#### create functional component
+```
+npx rrcc make-func-comp --dir Test --comp TestComp
+```
+#### create functional component with redux connected
+```
+npx rrcc make-func-comp-with-redux --dir Test --comp TestComp
+```
+#### create HOC component
+```
+npx rrcc make-hoc-comp --dir Test --comp TestComp
+```
+#### create HOC component with redux connected
+```
+npx rrcc make-hoc-comp-with-redux --dir Test --comp TestComp
+```
+#### create redux middleware
+```
+npx rrcc make-redux-middleware --comp TestComp
+```
+#### create redux reducer
+```
+npx rrcc make-redux-reducer --dir Test --comp TestComp
+```
+#### create scss file
+```
+npx rrcc make-scss-file --dir Test --name TestStyles
+```
