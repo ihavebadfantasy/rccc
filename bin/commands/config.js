@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const configuration = require('../configuration');
-const { success } = require('../chalk/index');
+const { success } = require('../chalk');
 
 const config = (args) => {
   const newConfig = Object.assign({}, configuration);

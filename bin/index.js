@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-"use strict";
 
 const path = require('path');
 const yargs = require('yargs/yargs');
@@ -33,13 +32,12 @@ const argv = yargs(hideBin(process.argv)).argv;
 
     return;
   }
-
   const fullConfig = {...initialConfiguration, ...configuration};
-  const compDirPath = path.resolve(__dirname, fullConfig.compDirPath);
-  const stylesDirPath = path.resolve(__dirname, fullConfig.stylesDirPath);
-  const contextDirPath = path.resolve(__dirname, fullConfig.contextDirPath);
-  const reduxDirPath = path.resolve(__dirname, fullConfig.reduxDirPath);
-  const middlewaresDirPath = path.resolve(__dirname, fullConfig.middlewaresDirPath);
+  const compDirPath = path.resolve('.', fullConfig.compDirPath);
+  const stylesDirPath = path.resolve('.', fullConfig.stylesDirPath);
+  const contextDirPath = path.resolve('.', fullConfig.contextDirPath);
+  const reduxDirPath = path.resolve('.', fullConfig.reduxDirPath);
+  const middlewaresDirPath = path.resolve('.', fullConfig.middlewaresDirPath);
 
   switch (command) {
     case 'show-commands':

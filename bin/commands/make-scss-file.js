@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { error, warning, success } = require('../chalk/index');
+const { error, warning, success } = require('../chalk');
 
 const makeSCSSFile = (compDirPath, args) => {
   const { dir, name } = args;

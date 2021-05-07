@@ -1,4 +1,4 @@
-const { info } = require('../chalk/index');
+const { info } = require('../chalk');
 const commands = require('../commands');
 
 const showCommands = () => {

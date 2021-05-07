@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { success } = require('../chalk/index');
+const { success } = require('../chalk');
 
 const resetConfig = () => {
   const configFilePath = path.join(process.cwd(), 'configuration.js');

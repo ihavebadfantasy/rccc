@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { error, warning, success } = require('../chalk/index');
+const { error, warning, success } = require('../chalk');
 
 const createComponent = (dir, comp, fileTemplate, compDirPath, compType = 'Component') => {
   if (!comp) {
